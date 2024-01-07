@@ -1,0 +1,40 @@
+.image-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.images {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.images img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease-in-out;
+}
+
+.image-selector {
+  margin-top: 20px;
+}
+
+.image-selector button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #f0f0f0;
+}
+
+.image-selector button:focus {
+  outline: none;
+}
+
+.image-selector button.active {
+  background-color: #ccc;
+}

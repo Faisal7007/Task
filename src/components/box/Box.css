@@ -1,0 +1,104 @@
+.container {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    border: 1px solid #ccc;
+    margin: 50px auto;
+    overflow: hidden;
+  }
+  
+  .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    transition: transform 0.5s ease-in-out; /* Transition for size change */
+  }
+  
+  .circle.one {
+    background-color: #3498db;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: moveOne 5s infinite linear;
+  }
+  
+  .circle.two {
+    background-color: #e74c3c;
+    bottom: 50%;
+    transform: translateY(50%);
+    animation: moveTwo 5s infinite linear;
+  }
+  
+  .circle.three {
+    background-color: #2ecc71;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: moveThree 5s infinite ease-in-out;
+  }
+  
+  .circle.four {
+    background-color: #f39c12;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: moveFour 5s infinite ease-in-out;
+  }
+  
+  @keyframes moveOne {
+    0% {
+      left: -50px;
+    }
+    100% {
+      left: calc(100% - 50px);
+    }
+  }
+  
+  @keyframes moveTwo {
+    0% {
+      left: calc(100% - 50px);
+    }
+    100% {
+      left: -50px;
+    }
+  }
+  
+  @keyframes moveThree {
+    0% {
+      transform: translateX(-50%);
+      top: 25%;
+    }
+    50% {
+      transform: translateX(-50%) translateY(50px);
+      top: calc(25% + 50px);
+    }
+    100% {
+      transform: translateX(-50%);
+      top: 25%;
+    }
+  }
+  
+  @keyframes moveFour {
+    0% {
+      transform: translateX(-50%);
+      bottom: 25%;
+    }
+    50% {
+      transform: translateX(-50%) translateY(-50px);
+      bottom: calc(25% + 50px);
+    }
+    100% {
+      transform: translateX(-50%);
+      bottom: 25%;
+    }
+  }
+  
+  /* Increase size on collision */
+  .circle:hover {
+    transform: scale(2);
+    transition: transform 0.5s ease-in-out;
+  }
+  
